@@ -7,11 +7,14 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/vaibhaw491/Intelleje.git'
             }
         }
-            stage('unit test') {
-                    steps {
-                       bat 'mvn test'
+            stage('Unit Test') {
+                steps {
+                    dir('demo-counter-app-main') {
+                        bat 'mvn test'
                     }
                 }
+            }
+
     }
 }
 
